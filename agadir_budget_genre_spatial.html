@@ -1,0 +1,2400 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme Budgétaire Genrée & Territoriale - Ville d'Agadir</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+        @import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);
+        @import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined);
+
+        *,
+        :after,
+        :before {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgba(59, 130, 246, 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style: ;
+        }
+        ::backdrop {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgba(59, 130, 246, 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style: ;
+        } /*! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com*/
+        *,
+        :after,
+        :before {
+            border: 0 solid #e5e7eb;
+            box-sizing: border-box;
+        }
+        :after,
+        :before {
+            --tw-content: "";
+        }
+        :host,
+        html {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+            font-family:
+                Open Sans,
+                ui-sans-serif,
+                system-ui,
+                sans-serif,
+                Apple Color Emoji,
+                Segoe UI Emoji,
+                Segoe UI Symbol,
+                Noto Color Emoji;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            -moz-tab-size: 4;
+            tab-size: 4;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            line-height: inherit;
+            margin: 0;
+        }
+        hr {
+            border-top-width: 1px;
+            color: inherit;
+            height: 0;
+        }
+        abbr:where([title]) {
+            text-decoration: underline dotted;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: inherit;
+            font-weight: inherit;
+        }
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+        b,
+        strong {
+            font-weight: bolder;
+        }
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family:
+                ui-monospace,
+                SFMono-Regular,
+                Menlo,
+                Monaco,
+                Consolas,
+                Liberation Mono,
+                Courier New,
+                monospace;
+            font-feature-settings: normal;
+            font-size: 1em;
+            font-variation-settings: normal;
+        }
+        small {
+            font-size: 80%;
+        }
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+        }
+        sub {
+            bottom: -0.25em;
+        }
+        sup {
+            top: -0.5em;
+        }
+        table {
+            border-collapse: collapse;
+            border-color: inherit;
+            text-indent: 0;
+        }
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            color: inherit;
+            font-family: inherit;
+            font-feature-settings: inherit;
+            font-size: 100%;
+            font-variation-settings: inherit;
+            font-weight: inherit;
+            letter-spacing: inherit;
+            line-height: inherit;
+            margin: 0;
+            padding: 0;
+        }
+        button,
+        select {
+            text-transform: none;
+        }
+        button,
+        input:where([type="button"]),
+        input:where([type="reset"]),
+        input:where([type="submit"]) {
+            -webkit-appearance: button;
+            background-color: transparent;
+            background-image: none;
+        }
+        :-moz-focusring {
+            outline: auto;
+        }
+        :-moz-ui-invalid {
+            box-shadow: none;
+        }
+        progress {
+            vertical-align: baseline;
+        }
+        ::-webkit-inner-spin-button,
+        ::-webkit-outer-spin-button {
+            height: auto;
+        }
+        [type="search"] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px;
+        }
+        ::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit;
+        }
+        summary {
+            display: list-item;
+        }
+        blockquote,
+        dd,
+        dl,
+        figure,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hr,
+        p,
+        pre {
+            margin: 0;
+        }
+        fieldset {
+            margin: 0;
+        }
+        fieldset,
+        legend {
+            padding: 0;
+        }
+        menu,
+        ol,
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        dialog {
+            padding: 0;
+        }
+        textarea {
+            resize: vertical;
+        }
+        input::placeholder,
+        textarea::placeholder {
+            color: #9ca3af;
+            opacity: 1;
+        }
+        [role="button"],
+        button {
+            cursor: pointer;
+        }
+        :disabled {
+            cursor: default;
+        }
+        audio,
+        canvas,
+        embed,
+        iframe,
+        img,
+        object,
+        svg,
+        video {
+            display: block;
+            vertical-align: middle;
+        }
+        img,
+        video {
+            height: auto;
+            max-width: 100%;
+        }
+        [hidden]:where(:not([hidden="until-found"])) {
+            display: none;
+        }
+        .sticky {
+            position: sticky;
+        }
+        .top-0 {
+            top: 0;
+        }
+        .z-10 {
+            z-index: 10;
+        }
+        .col-span-1 {
+            grid-column: span 1 / span 1;
+        }
+        .mb-1 {
+            margin-bottom: 4px;
+        }
+        .mb-2 {
+            margin-bottom: 8px;
+        }
+        .mb-4 {
+            margin-bottom: 16px;
+        }
+        .ml-1 {
+            margin-left: 4px;
+        }
+        .mr-1 {
+            margin-right: 4px;
+        }
+        .mr-2 {
+            margin-right: 8px;
+        }
+        .mt-1 {
+            margin-top: 4px;
+        }
+        .mt-4 {
+            margin-top: 16px;
+        }
+        .mt-auto {
+            margin-top: auto;
+        }
+        .flex {
+            display: flex;
+        }
+        .grid {
+            display: grid;
+        }
+        .h-1\.5 {
+            height: 6px;
+        }
+        .h-8 {
+            height: 32px;
+        }
+        .h-auto {
+            height: auto;
+        }
+        .h-full {
+            height: 100%;
+        }
+        .min-h-screen {
+            min-height: 100vh;
+        }
+        .w-8 {
+            width: 32px;
+        }
+        .w-full {
+            width: 100%;
+        }
+        .min-w-\[40px\] {
+            min-width: 40px;
+        }
+        .min-w-full {
+            min-width: 100%;
+        }
+        .flex-1 {
+            flex: 1 1 0%;
+        }
+        .flex-grow {
+            flex-grow: 1;
+        }
+        .grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+        .flex-row {
+            flex-direction: row;
+        }
+        .flex-col {
+            flex-direction: column;
+        }
+        .items-start {
+            align-items: flex-start;
+        }
+        .items-center {
+            align-items: center;
+        }
+        .justify-center {
+            justify-content: center;
+        }
+        .justify-between {
+            justify-content: space-between;
+        }
+        .gap-1 {
+            gap: 4px;
+        }
+        .gap-2 {
+            gap: 8px;
+        }
+        .gap-3 {
+            gap: 12px;
+        }
+        .gap-4 {
+            gap: 16px;
+        }
+        .gap-6 {
+            gap: 24px;
+        }
+        :is(.space-y-3 > :not([hidden]) ~ :not([hidden])) {
+            --tw-space-y-reverse: 0;
+            margin-bottom: calc(12px * var(--tw-space-y-reverse));
+            margin-top: calc(12px * (1 - var(--tw-space-y-reverse)));
+        }
+        :is(.space-y-3\.5 > :not([hidden]) ~ :not([hidden])) {
+            --tw-space-y-reverse: 0;
+            margin-bottom: calc(14px * var(--tw-space-y-reverse));
+            margin-top: calc(14px * (1 - var(--tw-space-y-reverse)));
+        }
+        .overflow-auto {
+            overflow: auto;
+        }
+        .rounded {
+            border-radius: 12px;
+        }
+        .rounded-full {
+            border-radius: 9999px;
+        }
+        .rounded-lg {
+            border-radius: 24px;
+        }
+        .rounded-md {
+            border-radius: 18px;
+        }
+        .rounded-xl {
+            border-radius: 36px;
+        }
+        .border-b {
+            border-bottom-width: 1px;
+        }
+        .border-t {
+            border-top-width: 1px;
+        }
+        .border-\[\#1a4980\] {
+            --tw-border-opacity: 1;
+            border-color: rgb(26 73 128 / var(--tw-border-opacity, 1));
+        }
+        .border-gray-100 {
+            --tw-border-opacity: 1;
+            border-color: rgb(243 244 246 / var(--tw-border-opacity, 1));
+        }
+        .border-gray-200 {
+            --tw-border-opacity: 1;
+            border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
+        }
+        .bg-\[\#0a2f5c\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(10 47 92 / var(--tw-bg-opacity, 1));
+        }
+        .bg-\[\#0f3c70\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(15 60 112 / var(--tw-bg-opacity, 1));
+        }
+        .bg-\[\#1a4980\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(26 73 128 / var(--tw-bg-opacity, 1));
+        }
+        .bg-\[\#f5f7fa\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(245 247 250 / var(--tw-bg-opacity, 1));
+        }
+        .bg-amber-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(254 243 199 / var(--tw-bg-opacity, 1));
+        }
+        .bg-amber-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(245 158 11 / var(--tw-bg-opacity, 1));
+        }
+        .bg-blue-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(219 234 254 / var(--tw-bg-opacity, 1));
+        }
+        .bg-gray-200 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
+        }
+        .bg-green-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(220 252 231 / var(--tw-bg-opacity, 1));
+        }
+        .bg-green-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1));
+        }
+        .bg-indigo-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(224 231 255 / var(--tw-bg-opacity, 1));
+        }
+        .bg-indigo-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(99 102 241 / var(--tw-bg-opacity, 1));
+        }
+        .bg-purple-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(243 232 255 / var(--tw-bg-opacity, 1));
+        }
+        .bg-red-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(254 226 226 / var(--tw-bg-opacity, 1));
+        }
+        .bg-red-500 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1));
+        }
+        .bg-white {
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+        }
+        .bg-yellow-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(254 249 195 / var(--tw-bg-opacity, 1));
+        }
+        .p-1\.5 {
+            padding: 6px;
+        }
+        .p-2 {
+            padding: 8px;
+        }
+        .p-3 {
+            padding: 12px;
+        }
+        .p-4 {
+            padding: 16px;
+        }
+        .p-5 {
+            padding: 20px;
+        }
+        .p-6 {
+            padding: 24px;
+        }
+        .px-1\.5 {
+            padding-left: 6px;
+            padding-right: 6px;
+        }
+        .px-2 {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        .px-6 {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        .py-0\.5 {
+            padding-bottom: 2px;
+            padding-top: 2px;
+        }
+        .py-1 {
+            padding-bottom: 4px;
+            padding-top: 4px;
+        }
+        .py-4 {
+            padding-bottom: 16px;
+            padding-top: 16px;
+        }
+        .pt-3 {
+            padding-top: 12px;
+        }
+        .pt-6 {
+            padding-top: 24px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .font-title {
+            font-family:
+                Lato,
+                ui-sans-serif,
+                system-ui,
+                sans-serif,
+                Apple Color Emoji,
+                Segoe UI Emoji,
+                Segoe UI Symbol,
+                Noto Color Emoji;
+        }
+        .text-2xl {
+            font-size: 24px;
+            line-height: 31.200000000000003px;
+        }
+        .text-base {
+            font-size: 16px;
+            line-height: 25.6px;
+        }
+        .text-sm {
+            font-size: 14px;
+            line-height: 21px;
+        }
+        .text-xl {
+            font-size: 20px;
+            line-height: 28px;
+        }
+        .text-xs {
+            font-size: 12px;
+            line-height: 19.200000000000003px;
+        }
+        .font-bold {
+            font-weight: 700;
+        }
+        .font-medium {
+            font-weight: 500;
+        }
+        .font-semibold {
+            font-weight: 600;
+        }
+        .text-\[\#0a2f5c\] {
+            --tw-text-opacity: 1;
+            color: rgb(10 47 92 / var(--tw-text-opacity, 1));
+        }
+        .text-\[\#1a4980\] {
+            --tw-text-opacity: 1;
+            color: rgb(26 73 128 / var(--tw-text-opacity, 1));
+        }
+        .text-amber-600 {
+            --tw-text-opacity: 1;
+            color: rgb(217 119 6 / var(--tw-text-opacity, 1));
+        }
+        .text-amber-800 {
+            --tw-text-opacity: 1;
+            color: rgb(146 64 14 / var(--tw-text-opacity, 1));
+        }
+        .text-blue-600 {
+            --tw-text-opacity: 1;
+            color: rgb(37 99 235 / var(--tw-text-opacity, 1));
+        }
+        .text-gray-400 {
+            --tw-text-opacity: 1;
+            color: rgb(156 163 175 / var(--tw-text-opacity, 1));
+        }
+        .text-gray-500 {
+            --tw-text-opacity: 1;
+            color: rgb(107 114 128 / var(--tw-text-opacity, 1));
+        }
+        .text-gray-700 {
+            --tw-text-opacity: 1;
+            color: rgb(55 65 81 / var(--tw-text-opacity, 1));
+        }
+        .text-gray-800 {
+            --tw-text-opacity: 1;
+            color: rgb(31 41 55 / var(--tw-text-opacity, 1));
+        }
+        .text-green-600 {
+            --tw-text-opacity: 1;
+            color: rgb(22 163 74 / var(--tw-text-opacity, 1));
+        }
+        .text-green-800 {
+            --tw-text-opacity: 1;
+            color: rgb(22 101 52 / var(--tw-text-opacity, 1));
+        }
+        .text-indigo-600 {
+            --tw-text-opacity: 1;
+            color: rgb(79 70 229 / var(--tw-text-opacity, 1));
+        }
+        .text-purple-600 {
+            --tw-text-opacity: 1;
+            color: rgb(147 51 234 / var(--tw-text-opacity, 1));
+        }
+        .text-red-600 {
+            --tw-text-opacity: 1;
+            color: rgb(220 38 38 / var(--tw-text-opacity, 1));
+        }
+        .text-red-800 {
+            --tw-text-opacity: 1;
+            color: rgb(153 27 27 / var(--tw-text-opacity, 1));
+        }
+        .text-white {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+        }
+        .text-yellow-800 {
+            --tw-text-opacity: 1;
+            color: rgb(133 77 14 / var(--tw-text-opacity, 1));
+        }
+        .shadow-sm {
+            --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+        .transition-colors {
+            transition-duration: 0.15s;
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .transition-shadow {
+            transition-duration: 0.15s;
+            transition-property: box-shadow;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover\:bg-\[\#0f3c70\]:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(15 60 112 / var(--tw-bg-opacity, 1));
+        }
+        .hover\:bg-gray-100:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+        }
+        .hover\:text-\[\#0a2f5c\]:hover {
+            --tw-text-opacity: 1;
+            color: rgb(10 47 92 / var(--tw-text-opacity, 1));
+        }
+        .hover\:text-gray-600:hover {
+            --tw-text-opacity: 1;
+            color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+        }
+        .hover\:shadow-md:hover {
+            --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+        @media (min-width: 768px) {
+            .md\:col-span-1 {
+                grid-column: span 1 / span 1;
+            }
+            .md\:col-span-2 {
+                grid-column: span 2 / span 2;
+            }
+            .md\:col-span-3 {
+                grid-column: span 3 / span 3;
+            }
+            .md\:h-screen {
+                height: 100vh;
+            }
+            .md\:min-w-\[240px\] {
+                min-width: 240px;
+            }
+            .md\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+            .md\:grid-cols-6 {
+                grid-template-columns: repeat(6, minmax(0, 1fr));
+            }
+            .md\:flex-row {
+                flex-direction: row;
+            }
+        }
+        @media (min-width: 1024px) {
+            .lg\:col-span-1 {
+                grid-column: span 1 / span 1;
+            }
+            .lg\:grid-cols-6 {
+                grid-template-columns: repeat(6, minmax(0, 1fr));
+            }
+        }
+
+        /* Custom styles for existing functionality */
+        .content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        #map {
+            height: 600px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        .chart-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #2d3748;
+        }
+        
+        tr:hover {
+            background: #f7fafc;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 0.95em;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #1e3c72;
+            box-shadow: 0 0 0 3px rgba(30, 60, 114, 0.1);
+        }
+        
+        input[type="number"] {
+            text-align: right;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 5px;
+            font-size: 0.95em;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 60, 114, 0.4);
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+        }
+        
+        .btn-warning {
+            background: linear-gradient(135deg, #ed8936, #dd6b20);
+        }
+        
+        .btn-info {
+            background: linear-gradient(135deg, #4299e1, #3182ce);
+        }
+        
+        .district-selector {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .district-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .district-btn {
+            padding: 10px;
+            background: #f7fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .district-btn:hover {
+            background: #edf2f7;
+            border-color: #1e3c72;
+        }
+        
+        .district-btn.selected {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            border-color: #1e3c72;
+        }
+        
+        .impact-matrix {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .impact-cell {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .impact-high {
+            border-left: 4px solid #48bb78;
+        }
+        
+        .impact-medium {
+            border-left: 4px solid #ed8936;
+        }
+        
+        .impact-low {
+            border-left: 4px solid #fc8181;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #e2e8f0;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .alert {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: 500;
+        }
+        
+        .alert-info {
+            background: #bee3f8;
+            color: #2c5282;
+            border-left: 4px solid #4299e1;
+        }
+        
+        .alert-success {
+            background: #c6f6d5;
+            color: #22543d;
+            border-left: 4px solid #48bb78;
+        }
+        
+        .alert-warning {
+            background: #feebc8;
+            color: #7c2d12;
+            border-left: 4px solid #ed8936;
+        }
+        
+        .total-row {
+            font-weight: bold;
+            background: #f7fafc;
+        }
+        
+        .total-row td {
+            border-top: 2px solid #1e3c72;
+            border-bottom: 2px solid #1e3c72;
+        }
+        
+        .legend {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 15px 0;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+        }
+        
+        .legend-color {
+            width: 30px;
+            height: 20px;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            #map {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flex flex-col md:flex-row bg-white min-h-screen">
+        <div id="sidebar" style="background-color: rgb(31 41 55);" class="bg-gray-800 h-screen text-white min-w-full md:min-w-[240px] p-6 flex flex-col gap-6 fixed top-0 left-0 z-20 hidden md:flex">
+            <div class="flex items-center gap-2 mb-4">
+                <span class="material-symbols-outlined text-2xl">location_city</span>
+                <h2 class="font-title text-xl font-bold">BudgetGenre</h2>
+            </div>
+            <div class="flex items-center justify-between bg-[#0f3c70] rounded-lg p-3 mb-4">
+                <span class="text-sm">Ville d'Agadir</span>
+                <span class="material-symbols-outlined text-sm">expand_more</span>
+            </div>
+            <nav class="flex flex-col gap-1 flex-grow">
+                <a href="#" class="flex items-center gap-3 p-3 rounded-md bg-[#1a4980] text-sm font-medium" onclick="showTab('dashboard')">
+                    <span class="material-symbols-outlined">dashboard</span> Tableau de Bord
+                </a>
+                <a href="#" class="flex items-center gap-3 p-3 rounded-md hover:bg-[#0f3c70] transition-colors text-sm font-medium" onclick="showTab('carte')">
+                    <span class="material-symbols-outlined">map</span> Cartographie Genre
+                </a>
+                <a href="#" class="flex items-center gap-3 p-3 rounded-md hover:bg-[#0f3c70] transition-colors text-sm font-medium" onclick="showTab('budget')">
+                    <span class="material-symbols-outlined">account_balance</span> Budget Genré
+                </a>
+                <a href="#" class="flex items-center gap-3 p-3 rounded-md hover:bg-[#0f3c70] transition-colors text-sm font-medium" onclick="showTab('quartiers')">
+                    <span class="material-symbols-outlined">apartment</span> Analyse Quartiers
+                </a>
+                <a href="#" class="flex items-center gap-3 p-3 rounded-md hover:bg-[#0f3c70] transition-colors text-sm font-medium" onclick="showTab('infrastructure')">
+                    <span class="material-symbols-outlined">engineering</span> Infrastructure
+                </a>
+                <a href="#" class="flex items-center gap-3 p-3 rounded-md hover:bg-[#0f3c70] transition-colors text-sm font-medium" onclick="showTab('services')">
+                    <span class="material-symbols-outlined">diversity_3</span> Services Publics
+                </a>
+                <a href="#" class="flex items-center gap-3 p-3 rounded-md hover:bg-[#0f3c70] transition-colors text-sm font-medium" onclick="showTab('impact')">
+                    <span class="material-symbols-outlined">landscape</span> Impact & Suivi
+                </a>
+                <a href="#" class="flex items-center gap-3 p-3 rounded-md hover:bg-[#0f3c70] transition-colors text-sm font-medium" onclick="showTab('recommandations')">
+                    <span class="material-symbols-outlined">lightbulb</span> Recommandations
+                </a>
+            </nav>
+            <div class="mt-auto pt-6 border-t border-[#1a4980]">
+                <a href="#" class="flex items-center gap-3 p-2 rounded-md hover:bg-[#0f3c70] transition-colors text-sm">
+                    <span class="material-symbols-outlined">logout</span> Déconnexion
+                </a>
+            </div>
+        </div>
+        <div class="flex-1 flex flex-col bg-[#f5f7fa] overflow-auto ml-0 md:ml-[240px]">
+            <header class="w-full bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center sticky top-0 z-10">
+                <div class="flex items-center gap-4">
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors" onclick="toggleSidebar()">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                    <h1 class="font-title text-xl font-bold text-[#0a2f5c]">Tableau de Bord</h1>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="p-2 rounded-full hover:bg-gray-100 transition-colors">
+                        <span class="material-symbols-outlined">notifications</span>
+                    </button>
+                    <button class="p-2 rounded-full hover:bg-gray-100 transition-colors">
+                        <span class="material-symbols-outlined">help</span>
+                    </button>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full bg-[#0a2f5c] flex items-center justify-center text-white">
+                            <span class="text-sm">AA</span>
+                        </div>
+                        <span class="text-sm font-medium text-gray-700">Admin</span>
+                    </div>
+                </div>
+            </header>
+            <div class="p-6 flex flex-col gap-6">
+        
+                <!-- Dashboard -->
+                <div id="dashboard" class="content active">
+                    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                        <div class="bg-white rounded-xl shadow-sm p-4 mb-4 hover:shadow-md transition-shadow col-span-1 md:col-span-1 lg:col-span-1">
+                            <div class="flex flex-col h-full">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div class="p-2 rounded-lg bg-blue-100">
+                                        <span class="material-symbols-outlined text-blue-600">account_balance</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-gray-400">Année 2025</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mb-1">Budget Total</p>
+                                <h2 class="text-xl font-bold text-gray-800 mb-2" id="totalBudget">1,2 Mds DH</h2>
+                                <div class="mt-auto">
+                                    <div class="text-xs flex items-center text-green-600">
+                                        <span class="material-symbols-outlined text-sm">trending_up</span>
+                                        <span>+12% vs 2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm p-4 mb-4 hover:shadow-md transition-shadow col-span-1 md:col-span-1 lg:col-span-1">
+                            <div class="flex flex-col h-full">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div class="p-2 rounded-lg bg-purple-100">
+                                        <span class="material-symbols-outlined text-purple-600">group</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-gray-400">Recensement</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mb-1">Population</p>
+                                <h2 class="text-xl font-bold text-gray-800 mb-2">950,000</h2>
+                                <div class="mt-auto">
+                                    <div class="flex justify-between text-xs text-gray-500">
+                                        <span>Hommes: 49%</span> <span>Femmes: 51%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm p-4 mb-4 hover:shadow-md transition-shadow col-span-1 md:col-span-1 lg:col-span-1">
+                            <div class="flex flex-col h-full">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div class="p-2 rounded-lg bg-amber-100">
+                                        <span class="material-symbols-outlined text-amber-600">balance</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-gray-400">Actuel</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mb-1">Budget Genre-Sensible</p>
+                                <h2 class="text-xl font-bold text-gray-800 mb-2" id="genreSensible">420M DH</h2>
+                                <div class="mt-auto">
+                                    <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                        <div class="bg-amber-500 h-1.5 rounded-full" style="width: 35%"></div>
+                                    </div>
+                                    <div class="text-xs text-gray-500 mt-1">35% du budget total</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm p-4 mb-4 hover:shadow-md transition-shadow col-span-1 md:col-span-1 lg:col-span-1">
+                            <div class="flex flex-col h-full">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div class="p-2 rounded-lg bg-green-100">
+                                        <span class="material-symbols-outlined text-green-600">location_on</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-gray-400">Couverture</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mb-1">Quartiers Couverts</p>
+                                <h2 class="text-xl font-bold text-gray-800 mb-2">18/22</h2>
+                                <div class="mt-auto">
+                                    <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                        <div class="bg-green-500 h-1.5 rounded-full" style="width: 82%"></div>
+                                    </div>
+                                    <div class="text-xs text-gray-500 mt-1">82% de la ville</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm p-4 mb-4 hover:shadow-md transition-shadow col-span-1 md:col-span-1 lg:col-span-1">
+                            <div class="flex flex-col h-full">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div class="p-2 rounded-lg bg-red-100">
+                                        <span class="material-symbols-outlined text-red-600">folder_open</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-gray-400">En cours</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mb-1">Projets Actifs</p>
+                                <h2 class="text-xl font-bold text-gray-800 mb-2">47</h2>
+                                <div class="mt-auto">
+                                    <div class="text-xs flex items-center">
+                                        <span class="bg-green-100 text-green-800 px-1.5 py-0.5 rounded-full mr-2">28</span>
+                                        <span class="bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded-full mr-2">15</span>
+                                        <span class="bg-red-100 text-red-800 px-1.5 py-0.5 rounded-full">4</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-sm p-4 mb-4 hover:shadow-md transition-shadow col-span-1 md:col-span-1 lg:col-span-1">
+                            <div class="flex flex-col h-full">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div class="p-2 rounded-lg bg-indigo-100">
+                                        <span class="material-symbols-outlined text-indigo-600">equalizer</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-gray-400">Indice</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mb-1">Score Égalité Genre</p>
+                                <h2 class="text-xl font-bold text-gray-800 mb-2">7.2/10</h2>
+                                <div class="mt-auto">
+                                    <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                        <div class="bg-indigo-500 h-1.5 rounded-full" style="width: 72%"></div>
+                                    </div>
+                                    <div class="text-xs flex items-center text-gray-500 mt-1">
+                                        <span class="material-symbols-outlined text-xs text-indigo-600 mr-1">trending_up</span>
+                                        +0.8pts depuis 2024
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
+                            <div class="bg-white rounded-xl shadow-sm p-5 md:col-span-3 hover:shadow-md transition-shadow">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-base font-semibold text-gray-800">Répartition Budget par Secteur</h3>
+                                    <button class="text-gray-400 hover:text-gray-600">
+                                        <span class="material-symbols-outlined text-sm">more_horiz</span>
+                                    </button>
+                                </div>
+                                <div id="budgetPieChart"></div>
+                            </div>
+                            <div class="bg-white rounded-xl shadow-sm p-5 md:col-span-3 hover:shadow-md transition-shadow">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h3 class="text-base font-semibold text-gray-800">Évolution du Score d'Égalité</h3>
+                                    <button class="text-gray-400 hover:text-gray-600">
+                                        <span class="material-symbols-outlined text-sm">more_horiz</span>
+                                    </button>
+                                </div>
+                                <div id="evolutionChart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Carte Interactive -->
+                <div id="carte" class="content">
+                    <div class="bg-white rounded-xl shadow-sm p-5 mb-6">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">🗺️ Cartographie Genre & Territoire - Agadir</h2>
+                        
+                        <div class="district-selector">
+                            <h3 class="text-lg font-semibold text-gray-700 mb-4">Sélectionnez un quartier pour analyse détaillée</h3>
+                            <div class="district-grid">
+                                <div class="district-btn" onclick="selectDistrict('centre')">Centre-Ville</div>
+                                <div class="district-btn" onclick="selectDistrict('talborjt')">Talborjt</div>
+                                <div class="district-btn" onclick="selectDistrict('bensergao')">Bensergao</div>
+                                <div class="district-btn" onclick="selectDistrict('tikiouine')">Tikiouine</div>
+                                <div class="district-btn" onclick="selectDistrict('hay-mohammadi')">Hay Mohammadi</div>
+                                <div class="district-btn" onclick="selectDistrict('anza')">Anza</div>
+                            </div>
+                        </div>
+                        
+                        <div class="legend">
+                            <h4 class="text-base font-semibold text-gray-700 mb-3">Légende</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <div class="legend-item">
+                                    <div class="legend-color" style="background: #48bb78;"></div>
+                                    <span class="text-sm">Zones à forte couverture genre (>70%)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color" style="background: #ed8936;"></div>
+                                    <span class="text-sm">Zones à couverture moyenne (40-70%)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color" style="background: #fc8181;"></div>
+                                    <span class="text-sm">Zones prioritaires (<40%)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color" style="background: #4299e1;"></div>
+                                    <span class="text-sm">Projets en cours</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-sm p-5 mb-6">
+                        <div id="map"></div>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <strong>💡 Utilisation :</strong> Cliquez sur les marqueurs pour voir les détails des projets et infrastructures genrées par quartier
+                    </div>
+                </div>
+        
+                <!-- Budget Genré -->
+                <div id="budget" class="content">
+                    <div class="bg-white rounded-xl shadow-sm p-5 mb-6">
+                        <h2 class="text-xl font-bold text-gray-800 mb-6">💰 Budget Genré 2025 - Agadir</h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                            <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-200">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="p-2 rounded-lg bg-green-100">
+                                        <span class="material-symbols-outlined text-green-600">check_circle</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-gray-400">Actives</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mb-1">Dépenses Genrées Actives</p>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">280 M DH</h3>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 35%;"></div>
+                                </div>
+                                <div class="text-xs text-gray-500 mt-2">35% du budget total</div>
+                            </div>
+                            
+                            <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-200">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="p-2 rounded-lg bg-amber-100">
+                                        <span class="material-symbols-outlined text-amber-600">pending</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-gray-400">Potentielles</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mb-1">Dépenses Genrables</p>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">320 M DH</h3>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-amber-500 h-2 rounded-full" style="width: 40%;"></div>
+                                </div>
+                                <div class="text-xs text-gray-500 mt-2">40% du budget total</div>
+                            </div>
+                            
+                            <div class="bg-white rounded-xl shadow-sm p-4 border border-gray-200">
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="p-2 rounded-lg bg-gray-100">
+                                        <span class="material-symbols-outlined text-gray-600">remove</span>
+                                    </div>
+                                    <span class="text-xs font-medium text-gray-400">Neutres</span>
+                                </div>
+                                <p class="text-sm text-gray-500 mb-1">Dépenses Neutres</p>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">200 M DH</h3>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gray-400 h-2 rounded-full" style="width: 25%;"></div>
+                                </div>
+                                <div class="text-xs text-gray-500 mt-2">25% du budget total</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-sm p-5 mb-6">
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="bg-gradient-to-r from-[#0a2f5c] to-[#1a4980] text-white">
+                                        <th class="px-4 py-3 text-left text-sm font-semibold">Secteur</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold">Budget Total (M DH)</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold">Part Genrée (%)</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold">Classification</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold">Priorité</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200">
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">🏫 Éducation & Formation</td>
+                                        <td class="px-4 py-3"><input type="number" value="180" onchange="updateBudget()" class="w-20 px-2 py-1 border border-gray-300 rounded text-right"></td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">65%</td>
+                                        <td class="px-4 py-3"><span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Genrée Active</span></td>
+                                        <td class="px-4 py-3 text-sm text-yellow-500">⭐⭐⭐</td>
+                                        <td class="px-4 py-3"><button class="px-3 py-1 text-xs font-medium text-blue-600 bg-blue-100 rounded hover:bg-blue-200" onclick="showDetails('education')">Détails</button></td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">🏥 Santé & Services Sociaux</td>
+                                        <td class="px-4 py-3"><input type="number" value="220" onchange="updateBudget()" class="w-20 px-2 py-1 border border-gray-300 rounded text-right"></td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">58%</td>
+                                        <td class="px-4 py-3"><span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Genrée Active</span></td>
+                                        <td class="px-4 py-3 text-sm text-yellow-500">⭐⭐⭐</td>
+                                        <td class="px-4 py-3"><button class="px-3 py-1 text-xs font-medium text-blue-600 bg-blue-100 rounded hover:bg-blue-200" onclick="showDetails('sante')">Détails</button></td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">🚌 Transport & Mobilité</td>
+                                        <td class="px-4 py-3"><input type="number" value="160" onchange="updateBudget()" class="w-20 px-2 py-1 border border-gray-300 rounded text-right"></td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">42%</td>
+                                        <td class="px-4 py-3"><span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-amber-100 text-amber-800">Genrable</span></td>
+                                        <td class="px-4 py-3 text-sm text-yellow-500">⭐⭐</td>
+                                        <td class="px-4 py-3"><button class="px-3 py-1 text-xs font-medium text-amber-600 bg-amber-100 rounded hover:bg-amber-200" onclick="showDetails('transport')">Activer</button></td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">🏗️ Infrastructure Urbaine</td>
+                                        <td class="px-4 py-3"><input type="number" value="280" onchange="updateBudget()" class="w-20 px-2 py-1 border border-gray-300 rounded text-right"></td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">35%</td>
+                                        <td class="px-4 py-3"><span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-amber-100 text-amber-800">Genrable</span></td>
+                                        <td class="px-4 py-3 text-sm text-yellow-500">⭐⭐</td>
+                                        <td class="px-4 py-3"><button class="px-3 py-1 text-xs font-medium text-amber-600 bg-amber-100 rounded hover:bg-amber-200" onclick="showDetails('infrastructure')">Activer</button></td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">💼 Développement Économique</td>
+                                        <td class="px-4 py-3"><input type="number" value="140" onchange="updateBudget()" class="w-20 px-2 py-1 border border-gray-300 rounded text-right"></td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">48%</td>
+                                        <td class="px-4 py-3"><span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">Genrée Active</span></td>
+                                        <td class="px-4 py-3 text-sm text-yellow-500">⭐⭐⭐</td>
+                                        <td class="px-4 py-3"><button class="px-3 py-1 text-xs font-medium text-blue-600 bg-blue-100 rounded hover:bg-blue-200" onclick="showDetails('economie')">Détails</button></td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">🌳 Espaces Verts & Loisirs</td>
+                                        <td class="px-4 py-3"><input type="number" value="100" onchange="updateBudget()" class="w-20 px-2 py-1 border border-gray-300 rounded text-right"></td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">38%</td>
+                                        <td class="px-4 py-3"><span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-amber-100 text-amber-800">Genrable</span></td>
+                                        <td class="px-4 py-3 text-sm text-yellow-500">⭐⭐</td>
+                                        <td class="px-4 py-3"><button class="px-3 py-1 text-xs font-medium text-amber-600 bg-amber-100 rounded hover:bg-amber-200" onclick="showDetails('espaces')">Activer</button></td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-4 py-3 text-sm font-medium text-gray-900">🏛️ Administration & RH</td>
+                                        <td class="px-4 py-3"><input type="number" value="120" onchange="updateBudget()" class="w-20 px-2 py-1 border border-gray-300 rounded text-right"></td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">15%</td>
+                                        <td class="px-4 py-3"><span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-800">Neutre</span></td>
+                                        <td class="px-4 py-3 text-sm text-yellow-500">⭐</td>
+                                        <td class="px-4 py-3"><button class="px-3 py-1 text-xs font-medium text-gray-600 bg-gray-100 rounded hover:bg-gray-200" onclick="showDetails('admin')">Voir</button></td>
+                                    </tr>
+                                    <tr class="bg-gray-50 font-semibold">
+                                        <td class="px-4 py-3 text-sm font-bold text-gray-900">TOTAL BUDGET</td>
+                                        <td class="px-4 py-3 text-sm font-bold text-gray-900" id="totalBudgetValue">1 200 M DH</td>
+                                        <td class="px-4 py-3 text-sm font-bold text-gray-900" id="totalGenrePct">42%</td>
+                                        <td class="px-4 py-3" colspan="3">-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-sm p-5">
+                        <div class="flex flex-wrap gap-3">
+                            <button class="px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-lg hover:bg-green-700 transition-colors" onclick="exportBudget()">
+                                <span class="material-symbols-outlined text-sm mr-2">download</span>Exporter Budget
+                            </button>
+                            <button class="px-4 py-2 bg-amber-600 text-white text-sm font-medium rounded-lg hover:bg-amber-700 transition-colors" onclick="updateBudget()">
+                                <span class="material-symbols-outlined text-sm mr-2">refresh</span>Recalculer
+                            </button>
+                            <button class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors" onclick="generateReport()">
+                                <span class="material-symbols-outlined text-sm mr-2">description</span>Générer Rapport
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Analyse Quartiers -->
+                <div id="quartiers" class="content" >
+                    <div class="bg-white rounded-xl shadow-sm p-5" style="margin-bottom: 2rem;">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">🏘️ Analyse par Quartier - Agadir</h2>
+                        
+                        <div class="alert alert-warning">
+                            <strong>⚠️ Zones Prioritaires :</strong> Bensergao, Tikiouine et Tilila nécessitent une attention particulière en termes d'infrastructures genrées
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-sm p-5"  style="margin-bottom: 2rem;">
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="bg-gradient-to-r from-[#0a2f5c] to-[#1a4980] text-white">
+                                        <th class="px-4 py-3 text-left text-sm font-semibold">Quartier</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold">Population</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold">% Femmes</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold">Budget Alloué (M DH)</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold">Services Genrés</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold">Score Accessibilité</th>
+                                        <th class="px-4 py-3 text-left text-sm font-semibold">Priorité</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200">
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-4 py-3 text-sm font-medium text-gray-900"><strong>Centre-Ville</strong></td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">85 000</td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">52%</td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">120</td>
+                                        <td class="px-4 py-3">
+                                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                                <div class="bg-green-500 h-2 rounded-full" style="width: 85%;"></div>
+                                            </div>
+                                            <div class="text-xs text-gray-500 mt-1">8/10</div>
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">8.5/10</td>
+                                        <td class="px-4 py-3"><span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">✓ Satisfaisant</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-4 py-3 text-sm font-medium text-gray-900"><strong>Talborjt</strong></td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">120 000</td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">51%</td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">95</td>
+                                        <td class="px-4 py-3">
+                                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                                <div class="bg-amber-500 h-2 rounded-full" style="width: 70%;"></div>
+                                            </div>
+                                            <div class="text-xs text-gray-500 mt-1">7/10</div>
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">7.2/10</td>
+                                        <td class="px-4 py-3"><span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-amber-100 text-amber-800">⚡ À améliorer</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-4 py-3 text-sm font-medium text-gray-900"><strong>Bensergao</strong></td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">95 000</td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">50%</td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">75</td>
+                                        <td class="px-4 py-3">
+                                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                                <div class="bg-red-500 h-2 rounded-full" style="width: 50%;"></div>
+                                            </div>
+                                            <div class="text-xs text-gray-500 mt-1">5/10</div>
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">5.8/10</td>
+                                        <td class="px-4 py-3"><span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800">⚠️ Prioritaire</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-4 py-3 text-sm font-medium text-gray-900"><strong>Tikiouine</strong></td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">78 000</td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">49%</td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">68</td>
+                                        <td class="px-4 py-3">
+                                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                                <div class="bg-red-500 h-2 rounded-full" style="width: 45%;"></div>
+                                            </div>
+                                            <div class="text-xs text-gray-500 mt-1">4.5/10</div>
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">5.2/10</td>
+                                        <td class="px-4 py-3"><span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800">⚠️ Prioritaire</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-4 py-3 text-sm font-medium text-gray-900"><strong>Hay Mohammadi</strong></td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">110 000</td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">52%</td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">88</td>
+                                        <td class="px-4 py-3">
+                                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                                <div class="bg-green-500 h-2 rounded-full" style="width: 75%;"></div>
+                                            </div>
+                                            <div class="text-xs text-gray-500 mt-1">7.5/10</div>
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">7.8/10</td>
+                                        <td class="px-4 py-3"><span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">✓ Bon</span></td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="px-4 py-3 text-sm font-medium text-gray-900"><strong>Anza</strong></td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">92 000</td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">53%</td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">105</td>
+                                        <td class="px-4 py-3">
+                                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                                <div class="bg-green-500 h-2 rounded-full" style="width: 80%;"></div>
+                                            </div>
+                                            <div class="text-xs text-gray-500 mt-1">8/10</div>
+                                        </td>
+                                        <td class="px-4 py-3 text-sm text-gray-600">8.2/10</td>
+                                        <td class="px-4 py-3"><span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">✓ Excellent</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-sm p-5">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Comparaison des Quartiers - Services Genrés</h3>
+                        <div id="quartiersChart"></div>
+                    </div>
+                </div>
+        
+                <!-- Infrastructure -->
+                <div id="infrastructure" class="content">
+                    <div class="bg-white rounded-xl shadow-sm p-5 mb-6">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">Infrastructure Genrée - Agadir</h2>
+            
+            <div class="impact-matrix">
+                <div class="impact-cell impact-high">
+                    <h3>Crèches Publiques</h3>
+                    <div class="stat-value" style="font-size: 1.8em;">12</div>
+                    <p>Capacité: 850 enfants</p>
+                    <small style="color: #48bb78;">Impact élevé</small>
+                </div>
+                <div class="impact-cell impact-high">
+                    <h3>Centres de Santé Femmes</h3>
+                    <div class="stat-value" style="font-size: 1.8em;">8</div>
+                    <p>Consultations: 45k/an</p>
+                    <small style="color: #48bb78;">Impact élevé</small>
+                </div>
+                <div class="impact-cell impact-medium">
+                    <h3>Arrêts Bus Sécurisés</h3>
+                    <div class="stat-value" style="font-size: 1.8em;">65</div>
+                    <p>Éclairés + caméras</p>
+                    <small style="color: #ed8936;">Impact moyen</small>
+                </div>
+                <div class="impact-cell impact-high">
+                    <h3>Espaces Entrepreneuriat F</h3>
+                    <div class="stat-value" style="font-size: 1.8em;">5</div>
+                    <p>320 entrepreneuses</p>
+                    <small style="color: #48bb78;">Impact élevé</small>
+                </div>
+                <div class="impact-cell impact-medium">
+                    <h3>Espaces Sportifs Mixtes</h3>
+                    <div class="stat-value" style="font-size: 1.8em;">18</div>
+                    <p>Accès parité horaires</p>
+                    <small style="color: #ed8936;">Impact moyen</small>
+                </div>
+                <div class="impact-cell impact-high">
+                    <h3>Centres Formation Pro</h3>
+                    <div class="stat-value" style="font-size: 1.8em;">6</div>
+                    <p>45% femmes</p>
+                    <small style="color: #48bb78;">Impact élevé</small>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3>Projets d'Infrastructure Planifiés 2025-2027</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Projet</th>
+                            <th>Quartier</th>
+                            <th>Budget (M DH)</th>
+                            <th>Bénéficiaires F/H</th>
+                            <th>Début</th>
+                            <th>Fin</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Piscine Municipale Femmes</td>
+                            <td>Talborjt</td>
+                            <td>15</td>
+                            <td>80% / 20%</td>
+                            <td>T2 2025</td>
+                            <td>T4 2025</td>
+                            <td><span style="background: #48bb78; color: white; padding: 3px 8px; border-radius: 5px;">En cours</span></td>
+                        </tr>
+                        <tr>
+                            <td>Crèche Municipale</td>
+                            <td>Bensergao</td>
+                            <td>8</td>
+                            <td>70% / 30%</td>
+                            <td>T1 2025</td>
+                            <td>T3 2025</td>
+                            <td><span style="background: #4299e1; color: white; padding: 3px 8px; border-radius: 5px;">Planifié</span></td>
+                        </tr>
+                        <tr>
+                            <td>Ligne Bus Sécurisée</td>
+                            <td>Tikiouine-Centre</td>
+                            <td>12</td>
+                            <td>55% / 45%</td>
+                            <td>T3 2025</td>
+                            <td>T1 2026</td>
+                            <td><span style="background: #4299e1; color: white; padding: 3px 8px; border-radius: 5px;">Planifié</span></td>
+                        </tr>
+                        <tr>
+                            <td>Éclairage Public Renforcé</td>
+                            <td>Tous quartiers</td>
+                            <td>25</td>
+                            <td>60% / 40%</td>
+                            <td>T1 2025</td>
+                            <td>T4 2026</td>
+                            <td><span style="background: #48bb78; color: white; padding: 3px 8px; border-radius: 5px;">En cours</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+                <!-- Services Publics -->
+                <div id="services" class="content">
+                    <div class="bg-white rounded-xl shadow-sm p-5 mb-6">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">🏥 Services Publics & Égalité - Agadir</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">👨‍⚕️</div>
+                    <div class="stat-label">Personnel Santé</div>
+                    <div class="stat-value">58% F</div>
+                    <div style="font-size: 0.9em; color: #48bb78;">Parité atteinte</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👨‍🏫</div>
+                    <div class="stat-label">Enseignants</div>
+                    <div class="stat-value">62% F</div>
+                    <div style="font-size: 0.9em; color: #48bb78;">Majorité féminine</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">👨‍💼</div>
+                    <div class="stat-label">Administration</div>
+                    <div class="stat-value">38% F</div>
+                    <div style="font-size: 0.9em; color: #ed8936;">À améliorer</div>
+                </div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service Public</th>
+                        <th>Budget (M DH)</th>
+                        <th>Usagers Femmes (%)</th>
+                        <th>Personnel Féminin (%)</th>
+                        <th>Mesures Genre</th>
+                        <th>Score Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🏥 Centres de Santé</td>
+                        <td>95</td>
+                        <td>65%</td>
+                        <td>58%</td>
+                        <td>✓ Consultations femmes, Planning familial</td>
+                        <td>9/10</td>
+                    </tr>
+                    <tr>
+                        <td>🏫 Écoles Primaires</td>
+                        <td>120</td>
+                        <td>49%</td>
+                        <td>62%</td>
+                        <td>✓ Parité élèves, Toilettes séparées</td>
+                        <td>8/10</td>
+                    </tr>
+                    <tr>
+                        <td>📚 Bibliothèques</td>
+                        <td>8</td>
+                        <td>52%</td>
+                        <td>55%</td>
+                        <td>✓ Sections dédiées, Horaires adaptés</td>
+                        <td>7/10</td>
+                    </tr>
+                    <tr>
+                        <td>🚌 Transport Public</td>
+                        <td>85</td>
+                        <td>48%</td>
+                        <td>12%</td>
+                        <td>⚡ Places prioritaires, Sécurité +</td>
+                        <td>6/10</td>
+                    </tr>
+                    <tr>
+                        <td>⚽ Installations Sportives</td>
+                        <td>45</td>
+                        <td>35%</td>
+                        <td>25%</td>
+                        <td>⚠️ Besoin quotas horaires</td>
+                        <td>5/10</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="alert alert-warning">
+                <strong>🎯 Actions Recommandées :</strong>
+                <ul style="margin-top: 10px; padding-left: 20px;">
+                    <li>Augmenter la présence féminine dans les transports publics (conducteurs, sécurité)</li>
+                    <li>Créer des créneaux horaires réservés aux femmes dans les installations sportives</li>
+                    <li>Renforcer l'éclairage et la sécurité aux abords des services publics</li>
+                </ul>
+            </div>
+        </div>
+        
+                <!-- Impact & Suivi -->
+                <div id="impact" class="content">
+                    <div class="bg-white rounded-xl shadow-sm p-5 mb-6">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">📊 Analyse d'Impact & Suivi des Indicateurs</h2>
+            
+            <div class="chart-container">
+                <h3>Indicateurs Clés de Performance (KPI) - Évolution 2023-2025</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Indicateur</th>
+                            <th>2023</th>
+                            <th>2024</th>
+                            <th>Objectif 2025</th>
+                            <th>Progression</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>% Femmes Conseil Municipal</td>
+                            <td>28%</td>
+                            <td>32%</td>
+                            <td>35%</td>
+                            <td>
+                                <div class="progress-bar" style="height: 20px;">
+                                    <div class="progress-fill" style="width: 91%; font-size: 0.8em;">91%</div>
+                                </div>
+                            </td>
+                            <td><span style="color: #48bb78;">✓ En bonne voie</span></td>
+                        </tr>
+                        <tr>
+                            <td>Écart Salarial F/H Secteur Public</td>
+                            <td>-15%</td>
+                            <td>-12%</td>
+                            <td>-8%</td>
+                            <td>
+                                <div class="progress-bar" style="height: 20px;">
+                                    <div class="progress-fill" style="width: 75%; background: #ed8936; font-size: 0.8em;">75%</div>
+                                </div>
+                            </td>
+                            <td><span style="color: #ed8936;">⚡ Effort requis</span></td>
+                        </tr>
+                        <tr>
+                            <td>Taux Féminisation Postes Cadres</td>
+                            <td>32%</td>
+                            <td>36%</td>
+                            <td>40%</td>
+                            <td>
+                                <div class="progress-bar" style="height: 20px;">
+                                    <div class="progress-fill" style="width: 90%; font-size: 0.8em;">90%</div>
+                                </div>
+                            </td>
+                            <td><span style="color: #48bb78;">✓ En bonne voie</span></td>
+                        </tr>
+                        <tr>
+                            <td>Accès Crèches (Places/1000 enfants)</td>
+                            <td>45</td>
+                            <td>52</td>
+                            <td>65</td>
+                            <td>
+                                <div class="progress-bar" style="height: 20px;">
+                                    <div class="progress-fill" style="width: 80%; font-size: 0.8em;">80%</div>
+                                </div>
+                            </td>
+                            <td><span style="color: #48bb78;">✓ Bon</span></td>
+                        </tr>
+                        <tr>
+                            <td>Sentiment de Sécurité Femmes (%)</td>
+                            <td>58%</td>
+                            <td>64%</td>
+                            <td>75%</td>
+                            <td>
+                                <div class="progress-bar" style="height: 20px;">
+                                    <div class="progress-fill" style="width: 85%; font-size: 0.8em;">85%</div>
+                                </div>
+                            </td>
+                            <td><span style="color: #48bb78;">✓ Bon</span></td>
+                        </tr>
+                        <tr>
+                            <td>Formation Genre Personnel (%)</td>
+                            <td>32%</td>
+                            <td>48%</td>
+                            <td>70%</td>
+                            <td>
+                                <div class="progress-bar" style="height: 20px;">
+                                    <div class="progress-fill" style="width: 69%; background: #ed8936; font-size: 0.8em;">69%</div>
+                                </div>
+                            </td>
+                            <td><span style="color: #ed8936;">⚡ Accélérer</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="chart-container">
+                <h3>Impact des Programmes Genrés par Secteur</h3>
+                <div id="impactChart"></div>
+            </div>
+            
+            <div class="alert alert-success">
+                <strong>✅ Réussites 2024 :</strong>
+                <ul style="margin-top: 10px; padding-left: 20px;">
+                    <li><strong>+35%</strong> d'entrepreneures accompagnées</li>
+                    <li><strong>+28%</strong> de places en crèche</li>
+                    <li><strong>+18%</strong> d'éclairage public dans zones sensibles</li>
+                    <li><strong>12%</strong> de réduction des inégalités salariales</li>
+                </ul>
+            </div>
+        </div>
+        
+                <!-- Recommandations -->
+                <div id="recommandations" class="content">
+                    <div class="bg-white rounded-xl shadow-sm p-5 mb-6">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">💡 Recommandations Stratégiques 2025-2027</h2>
+            
+            <div class="alert alert-info">
+                <strong>🎯 Vision Stratégique :</strong> Positionner Agadir comme ville modèle de la région MENA en matière d'égalité de genre et d'inclusion urbaine
+            </div>
+            
+            <h3>Priorités Immédiates (2025)</h3>
+            
+            <div class="impact-matrix">
+                <div class="impact-cell impact-high">
+                    <h4>🚨 Priorité 1</h4>
+                    <h3>Zones Défavorisées</h3>
+                    <p><strong>Budget requis:</strong> 85M DH</p>
+                    <p>Renforcer infrastructure genrée à Bensergao et Tikiouine</p>
+                    <small>Impact: 173k habitants</small>
+                </div>
+                <div class="impact-cell impact-high">
+                    <h4>🚨 Priorité 2</h4>
+                    <h3>Sécurité Urbaine</h3>
+                    <p><strong>Budget requis:</strong> 45M DH</p>
+                    <p>Éclairage + caméras + patrouilles nocturnes</p>
+                    <small>Impact: Toute la ville</small>
+                </div>
+                <div class="impact-cell impact-high">
+                    <h4>🚨 Priorité 3</h4>
+                    <h3>Petite Enfance</h3>
+                    <p><strong>Budget requis:</strong> 55M DH</p>
+                    <p>6 nouvelles crèches + subsides</p>
+                    <small>Impact: 4500 familles</small>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 30px;">Recommandations Sectorielles</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Secteur</th>
+                        <th>Recommandation</th>
+                        <th>Budget Estimé (M DH)</th>
+                        <th>Impact Attendu</th>
+                        <th>Délai</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🚌 Transport</td>
+                        <td>
+                            <strong>Bus à Haut Niveau de Service (BHNS)</strong><br>
+                            - 3 lignes desservant zones périphériques<br>
+                            - Arrêts sécurisés éclairés<br>
+                            - Personnel formé sécurité genre
+                        </td>
+                        <td>180</td>
+                        <td>
+                            +45% mobilité femmes<br>
+                            -30% sentiment insécurité
+                        </td>
+                        <td>2025-2026</td>
+                    </tr>
+                    <tr>
+                        <td>🏥 Santé</td>
+                        <td>
+                            <strong>Centres Santé Femmes Quartiers</strong><br>
+                            - 4 nouveaux centres spécialisés<br>
+                            - Planning familial gratuit<br>
+                            - Dépistage cancer sein/col
+                        </td>
+                        <td>65</td>
+                        <td>
+                            +60% accès soins femmes<br>
+                            +25k consultations/an
+                        </td>
+                        <td>2025</td>
+                    </tr>
+                    <tr>
+                        <td>💼 Économie</td>
+                        <td>
+                            <strong>Fonds Entrepreneuriat Féminin</strong><br>
+                            - Microcrédits taux préférentiels<br>
+                            - Incubateur dédié<br>
+                            - Formation business
+                        </td>
+                        <td>40</td>
+                        <td>
+                            500 nouvelles entreprises<br>
+                            2000 emplois créés
+                        </td>
+                        <td>2025-2027</td>
+                    </tr>
+                    <tr>
+                        <td>🏫 Éducation</td>
+                        <td>
+                            <strong>Programme Anti-Décrochage Filles</strong><br>
+                            - Bourses conditionnelles<br>
+                            - Transport scolaire gratuit<br>
+                            - Mentorat filles rurales
+                        </td>
+                        <td>35</td>
+                        <td>
+                            -50% décrochage filles<br>
+                            +85% taux scolarisation
+                        </td>
+                        <td>2025-2026</td>
+                    </tr>
+                    <tr>
+                        <td>🌳 Espaces Publics</td>
+                        <td>
+                            <strong>Parcs Inclusifs & Sécurisés</strong><br>
+                            - 8 parcs rénovés<br>
+                            - Éclairage LED<br>
+                            - Aires jeux + fitness
+                        </td>
+                        <td>50</td>
+                        <td>
+                            +70% fréquentation F<br>
+                            Amélioration bien-être
+                        </td>
+                        <td>2025-2026</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 style="margin-top: 30px;">Mesures Transversales</h3>
+            
+            <div class="chart-container">
+                <h4>1️⃣ Gouvernance & Institutionnalisation</h4>
+                <ul style="padding-left: 20px; line-height: 1.8;">
+                    <li>✅ Créer une <strong>Cellule Genre</strong> au sein de la commune (5 personnes dédiées)</li>
+                    <li>✅ Former <strong>100% des responsables</strong> de service à la budgétisation genrée</li>
+                    <li>✅ Mettre en place un <strong>Observatoire Genre</strong> avec données désagrégées</li>
+                    <li>✅ Établir des <strong>quotas paritaires</strong> dans les commissions municipales</li>
+                </ul>
+            </div>
+            
+            <div class="chart-container">
+                <h4>2️⃣ Collecte de Données & Monitoring</h4>
+                <ul style="padding-left: 20px; line-height: 1.8;">
+                    <li>📊 Systématiser la <strong>désagrégation par sexe</strong> de toutes les données municipales</li>
+                    <li>📊 Réaliser une <strong>enquête annuelle</strong> sur le sentiment de sécurité des femmes</li>
+                    <li>📊 Cartographier les <strong>zones à risque</strong> pour les femmes (marches exploratoires)</li>
+                    <li>📊 Publier un <strong>rapport annuel</strong> sur l'égalité de genre dans la ville</li>
+                </ul>
+            </div>
+            
+            <div class="chart-container">
+                <h4>3️⃣ Participation Citoyenne</h4>
+                <ul style="padding-left: 20px; line-height: 1.8;">
+                    <li>👥 Créer des <strong>conseils de quartier</strong> avec parité obligatoire</li>
+                    <li>👥 Organiser des <strong>budgets participatifs genrés</strong> (10% du budget)</li>
+                    <li>👥 Lancer des <strong>campagnes de sensibilisation</strong> sur l'égalité de genre</li>
+                    <li>👥 Impliquer les <strong>associations féminines</strong> dans la planification urbaine</li>
+                </ul>
+            </div>
+            
+            <h3 style="margin-top: 30px;">📅 Calendrier de Mise en Œuvre</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Trimestre</th>
+                        <th>Actions Clés</th>
+                        <th>Livrables</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>T1 2025</strong></td>
+                        <td>
+                            • Création Cellule Genre<br>
+                            • Formation équipes<br>
+                            • Diagnostic approfondi
+                        </td>
+                        <td>
+                            ✓ Cellule opérationnelle<br>
+                            ✓ 50 agents formés<br>
+                            ✓ Rapport diagnostic
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>T2-T3 2025</strong></td>
+                        <td>
+                            • Lancement 1ers projets prioritaires<br>
+                            • Rénovation éclairage<br>
+                            • Ouverture 2 crèches
+                        </td>
+                        <td>
+                            ✓ 3 projets en cours<br>
+                            ✓ 25 km voiries éclairées<br>
+                            ✓ 2 crèches actives
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>T4 2025</strong></td>
+                        <td>
+                            • Évaluation mi-parcours<br>
+                            • Ajustements<br>
+                            • Planification 2026
+                        </td>
+                        <td>
+                            ✓ Rapport évaluation<br>
+                            ✓ Plan d'action révisé<br>
+                            ✓ Budget 2026 genré
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="alert alert-success" style="margin-top: 30px;">
+                <strong>💰 Budget Total Recommandé 2025-2027 :</strong> 555 millions DH
+                <div style="margin-top: 15px; font-size: 1.1em;">
+                    <strong>ROI attendu :</strong> 
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>+15% taux d'activité féminine</li>
+                        <li>+25% satisfaction citoyenne</li>
+                        <li>+3500 emplois créés</li>
+                        <li>-40% écart de genre dans l'espace public</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Variables globales
+        let selectedDistrict = null;
+        
+        // Fonction pour basculer la sidebar sur mobile
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('hidden');
+        }
+        let map = null;
+        
+        // Fonction de changement d'onglet
+        function showTab(tabName) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Mettre à jour les liens de navigation
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.classList.remove('bg-[#1a4980]');
+                link.classList.add('hover:bg-[#0f3c70]');
+            });
+            
+            // Activer le lien correspondant
+            const activeLink = document.querySelector(`a[onclick="showTab('${tabName}')"]`);
+            if (activeLink) {
+                activeLink.classList.add('bg-[#1a4980]');
+                activeLink.classList.remove('hover:bg-[#0f3c70]');
+            }
+            
+            document.getElementById(tabName).classList.add('active');
+            
+            // Mettre à jour le titre du header
+            const headerTitle = document.querySelector('header h1');
+            const titles = {
+                'dashboard': 'Tableau de Bord',
+                'carte': 'Cartographie Genre',
+                'budget': 'Budget Genré',
+                'quartiers': 'Analyse Quartiers',
+                'infrastructure': 'Infrastructure',
+                'services': 'Services Publics',
+                'impact': 'Impact & Suivi',
+                'recommandations': 'Recommandations'
+            };
+            if (headerTitle && titles[tabName]) {
+                headerTitle.textContent = titles[tabName];
+            }
+            
+            // Initialiser la carte si on passe à l'onglet carte
+            if (tabName === 'carte' && !map) {
+                initMap();
+            }
+            
+            // Générer les graphiques si nécessaire
+            if (tabName === 'dashboard') {
+                generateDashboardCharts();
+            }
+            if (tabName === 'quartiers') {
+                generateQuartiersChart();
+            }
+            if (tabName === 'impact') {
+                generateImpactChart();
+            }
+        }
+        
+        // Initialisation de la carte Leaflet
+        function initMap() {
+            // Coordonnées d'Agadir
+            map = L.map('map').setView([30.4278, -9.5981], 12);
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+            
+            // Marqueurs pour différents quartiers avec données
+            const quartiers = [
+                {name: 'Centre-Ville', lat: 30.4278, lng: -9.5981, score: 8.5, color: 'green'},
+                {name: 'Talborjt', lat: 30.4100, lng: -9.5800, score: 7.2, color: 'orange'},
+                {name: 'Bensergao', lat: 30.4400, lng: -9.6100, score: 5.8, color: 'red'},
+                {name: 'Tikiouine', lat: 30.4500, lng: -9.5700, score: 5.2, color: 'red'},
+                {name: 'Hay Mohammadi', lat: 30.4000, lng: -9.6000, score: 7.8, color: 'green'},
+                {name: 'Anza', lat: 30.3900, lng: -9.5500, score: 8.2, color: 'green'}
+            ];
+            
+            quartiers.forEach(q => {
+                const markerColor = q.color === 'green' ? 'green' : (q.color === 'orange' ? 'orange' : 'red');
+                const icon = L.divIcon({
+                    className: 'custom-marker',
+                    html: `<div style="background: ${markerColor}; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; border: 3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);">${q.score}</div>`,
+                    iconSize: [30, 30]
+                });
+                
+                const marker = L.marker([q.lat, q.lng], {icon: icon}).addTo(map);
+                marker.bindPopup(`
+                    <div style="text-align: center;">
+                        <h3 style="margin: 0 0 10px 0; color: #1e3c72;">${q.name}</h3>
+                        <p style="margin: 5px 0;"><strong>Score Accessibilité Genre:</strong> ${q.score}/10</p>
+                        <p style="margin: 5px 0; color: ${markerColor};">
+                            ${q.score >= 8 ? '✓ Excellent' : (q.score >= 6 ? '⚡ À améliorer' : '⚠️ Prioritaire')}
+                        </p>
+                        <button onclick="analyzeQuartier('${q.name}')" style="margin-top: 10px; padding: 5px 10px; background: #1e3c72; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                            Analyse Détaillée
+                        </button>
+                    </div>
+                `);
+            });
+        }
+        
+        // Génération des graphiques Dashboard
+        function generateDashboardCharts() {
+            // Graphique en barres répartition budget
+            const budgetChart = new ApexCharts(document.querySelector('#budgetPieChart'), {
+                chart: {
+                    type: 'bar',
+                    width: '100%',
+                    height: 240,
+                    toolbar: { show: false },
+                    stacked: false
+                },
+                colors: ['#0a2f5c', '#f59e0b'],
+                xaxis: {
+                    categories: ['Éducation', 'Santé', 'Infrastructure', 'Transport', 'Culture', 'Sécurité'],
+                    labels: { style: { colors: '#64748b' } }
+                },
+                yaxis: {
+                    title: { text: 'Millions MAD' },
+                    labels: { style: { colors: '#64748b' } }
+                },
+                legend: { position: 'top' },
+                dataLabels: { enabled: false },
+                grid: { borderColor: '#f1f5f9' },
+                plotOptions: {
+                    bar: {
+                        borderRadius: 4,
+                        columnWidth: '60%'
+                    }
+                },
+                series: [
+                    { name: 'Budget Total', data: [42, 38, 65, 27, 33, 43] },
+                    { name: 'Budget Genré', data: [12, 22, 14, 18, 6, 21] }
+                ]
+            });
+            budgetChart.render();
+            
+            // Graphique évolution indicateurs
+            const evolutionChart = new ApexCharts(document.querySelector('#evolutionChart'), {
+                chart: {
+                    type: 'line',
+                    width: '100%',
+                    height: 240,
+                    toolbar: { show: false }
+                },
+                colors: ['#1a4980'],
+                xaxis: {
+                    categories: ['2019', '2020', '2021', '2022', '2023'],
+                    labels: { style: { colors: '#64748b' } }
+                },
+                yaxis: {
+                    min: 0,
+                    max: 100,
+                    title: { text: 'Score sur 100' },
+                    labels: { style: { colors: '#64748b' } }
+                },
+                stroke: { curve: 'smooth', width: 3 },
+                markers: { size: 5 },
+                grid: { borderColor: '#f1f5f9' },
+                tooltip: { theme: 'light' },
+                series: [{ name: "Score d'Égalité", data: [45, 52, 58, 63, 68] }]
+            });
+            evolutionChart.render();
+        }
+        
+        // Génération graphique quartiers
+        function generateQuartiersChart() {
+            const quartiersChart = new ApexCharts(document.querySelector('#quartiersChart'), {
+                chart: {
+                    type: 'bar',
+                    width: '100%',
+                    height: 400,
+                    toolbar: { show: false }
+                },
+                colors: ['#48bb78', '#ed8936', '#fc8181', '#fc8181', '#48bb78', '#48bb78'],
+                xaxis: {
+                    categories: ['Centre', 'Talborjt', 'Bensergao', 'Tikiouine', 'H. Mohammadi', 'Anza'],
+                    labels: { style: { colors: '#64748b' } }
+                },
+                yaxis: {
+                    title: { text: 'Score /10' },
+                    min: 0,
+                    max: 10,
+                    labels: { style: { colors: '#64748b' } }
+                },
+                dataLabels: { enabled: false },
+                grid: { borderColor: '#f1f5f9' },
+                plotOptions: {
+                    bar: {
+                        borderRadius: 4,
+                        columnWidth: '60%'
+                    }
+                },
+                series: [{ name: 'Score Services Genrés', data: [8.5, 7.2, 5.8, 5.2, 7.8, 8.2] }]
+            });
+            quartiersChart.render();
+        }
+        
+        // Génération graphique impact
+        function generateImpactChart() {
+            const impactChart = new ApexCharts(document.querySelector('#impactChart'), {
+                chart: {
+                    type: 'bar',
+                    width: '100%',
+                    height: 400,
+                    toolbar: { show: false }
+                },
+                colors: ['#1a4980', '#0a2f5c'],
+                xaxis: {
+                    categories: ['Éducation', 'Santé', 'Économie', 'Transport', 'Infrastructure'],
+                    labels: { style: { colors: '#64748b' } }
+                },
+                yaxis: {
+                    title: { text: 'Score Impact /10' },
+                    min: 0,
+                    max: 10,
+                    labels: { style: { colors: '#64748b' } }
+                },
+                dataLabels: { enabled: false },
+                grid: { borderColor: '#f1f5f9' },
+                plotOptions: {
+                    bar: {
+                        borderRadius: 4,
+                        columnWidth: '60%'
+                    }
+                },
+                series: [
+                    { name: 'Impact Actuel', data: [9.2, 8.8, 8.5, 6.5, 7.2] },
+                    { name: 'Objectif 2025', data: [9.5, 9.2, 9.0, 8.5, 8.8] }
+                ]
+            });
+            impactChart.render();
+        }
+        
+        // Sélection de quartier
+        function selectDistrict(district) {
+            selectedDistrict = district;
+            document.querySelectorAll('.district-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            event.target.classList.add('selected');
+            alert(`Analyse détaillée du quartier ${district} - Fonctionnalité à développer`);
+        }
+        
+        // Analyse détaillée quartier
+        function analyzeQuartier(name) {
+            alert(`Analyse approfondie de ${name}\n\nCette fonctionnalité afficherait:\n- Démographie détaillée\n- Infrastructure disponible\n- Projets en cours\n- Besoins identifiés\n- Budget alloué`);
+        }
+        
+        // Mise à jour budget
+        function updateBudget() {
+            alert('Recalcul du budget en cours...');
+            // Logique de recalcul ici
+        }
+        
+        // Export budget
+        function exportBudget() {
+            alert('Export du budget vers CSV/Excel...');
+        }
+        
+        // Générer rapport
+        function generateReport() {
+            alert('Génération du rapport complet PDF...');
+        }
+        
+        // Afficher détails
+        function showDetails(sector) {
+            alert(`Détails du secteur: ${sector}\n\nCette fenêtre afficherait l'analyse complète avec indicateurs, projets et recommandations.`);
+        }
+        
+        // Initialisation au chargement
+        window.onload = function() {
+            generateDashboardCharts();
+        };
+    </script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

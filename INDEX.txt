@@ -1,0 +1,240 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║     🏛️  PLATEFORME BUDGÉTAIRE GENRÉE & TERRITORIALE - AGADIR 🏛️          ║
+║                                                                            ║
+║                        PACKAGE COMPLET V1.0                                ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📦 CONTENU DU PACKAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 DOCUMENTATION (Commencez ici!)
+  ├── README.md (14 KB)
+  │   └── Guide général, vue d'ensemble complète
+  │
+  ├── PRESENTATION_EXECUTIVE_AGADIR.md (13 KB)
+  │   └── Pour décideurs : résumé exécutif, ROI, plan d'action
+  │
+  └── GUIDE_UTILISATION.md (11 KB)
+      └── Manuel utilisateur détaillé, méthodologie, FAQ
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🌐 APPLICATION WEB (Principal)
+  └── agadir_budget_genre_spatial.html (61 KB)
+      └── Interface web interactive complète - 8 modules
+      └── ⭐ OUVRIR CE FICHIER EN PREMIER ⭐
+      └── Fonctionne 100% hors ligne, aucune installation requise
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🐍 ANALYSE PYTHON
+  └── agadir_analyse_genre.py (19 KB)
+      └── Script d'analyse avancée
+      └── Génère automatiquement les visualisations
+      └── Usage: python agadir_analyse_genre.py
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 VISUALISATIONS INTERACTIVES
+  ├── agadir_carte_genre.html (14 KB)
+  │   └── Carte interactive des 6 quartiers d'Agadir
+  │
+  ├── agadir_budget_secteurs.html (4.7 MB)
+  │   └── Graphique budget par secteur (Plotly)
+  │
+  └── agadir_evolution_indicateurs.html (4.7 MB)
+      └── Évolution des KPI 2023-2025 (Plotly)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 DONNÉES STRUCTURÉES
+  └── rapport_agadir_2025.json (4.8 KB)
+      └── Rapport complet JSON exploitable
+      └── Import direct dans Excel, Python, Power BI, etc.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 DÉMARRAGE RAPIDE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣ LIRE D'ABORD
+   • Ouvrir README.md pour vue d'ensemble
+   • Consulter PRESENTATION_EXECUTIVE_AGADIR.md si décideur
+
+2️⃣ EXPLORER L'APPLICATION
+   • Double-cliquer sur agadir_budget_genre_spatial.html
+   • Naviguer entre les 8 onglets
+   • Tester la carte interactive
+   • Modifier les données budgétaires
+
+3️⃣ ANALYSES AVANCÉES (Optionnel)
+   • Installer Python 3.10+
+   • Installer: pip install pandas plotly folium geopandas
+   • Exécuter: python agadir_analyse_genre.py
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 FONCTIONNALITÉS PRINCIPALES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Tableau de Bord Interactif
+   • Statistiques globales en temps réel
+   • KPI ville d'Agadir
+   • Population, budget, scores
+
+✅ Cartographie Genre
+   • 6 quartiers d'Agadir géolocalisés
+   • Score accessibilité genre par zone
+   • Identification zones prioritaires (Bensergao, Tikiouine)
+
+✅ Budget Genré
+   • Classification 3 catégories (Genrée Active/Genrable/Neutre)
+   • 7 secteurs analysés
+   • Simulation budgétaire interactive
+   • Export CSV/Excel
+
+✅ Analyse Territoriale
+   • Comparaison 6 quartiers
+   • Population, services, budget par zone
+   • Graphiques comparatifs
+
+✅ Infrastructure & Services
+   • Inventaire équipements genrés
+   • 12 crèches, 8 centres santé, 65 arrêts bus
+   • Projets planifiés 2025-2027
+
+✅ Suivi Performance
+   • 6 indicateurs clés (KPI)
+   • Évolution 2023-2025
+   • Objectifs 2025 et progression
+
+✅ Recommandations Stratégiques
+   • 3 priorités immédiates (85M DH)
+   • Plan d'action moyen terme
+   • ROI calculé : 3.2x sur 3 ans
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 DONNÉES CLÉS AGADIR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🏙️ Ville
+   • Population: 950,000 habitants
+   • Femmes: 484,500 (51%)
+   • Hommes: 465,500 (49%)
+   • Quartiers: 6 analysés
+
+💰 Budget 2025
+   • Total: 1,200 M DH
+   • Genre-sensible: 533 M DH (44.4%)
+   • Genrée Active: 280 M DH (35%)
+   • Genrable: 320 M DH (40%)
+   • Neutre: 200 M DH (25%)
+
+🏘️ Quartiers (Score Genre /10)
+   • Centre-Ville: 8.5 ✅ Excellent
+   • Anza: 8.2 ✅ Excellent
+   • Hay Mohammadi: 7.8 ✅ Bon
+   • Talborjt: 7.2 ⚡ À améliorer
+   • Bensergao: 5.8 ⚠️ Prioritaire
+   • Tikiouine: 5.2 ⚠️ Prioritaire
+
+🎯 Objectifs 2025
+   • 50% budget genre-sensible
+   • 40% féminisation cadres
+   • -8% écart salarial
+   • 75% sentiment sécurité femmes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💰 INVESTISSEMENTS RECOMMANDÉS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚨 URGENT (Q1-Q2 2025) - 85M DH
+   • Renforcement Bensergao/Tikiouine: 45M DH
+   • Éclairage public zones sensibles: 25M DH
+   • 4 nouvelles crèches: 15M DH
+
+⚡ PRIORITAIRE (2025) - 65M DH
+   • Ligne bus sécurisée: 35M DH
+   • 2 centres santé femmes: 18M DH
+   • Fonds entrepreneuriat: 12M DH
+
+📅 MOYEN TERME (2025-2026) - 35M DH
+   • Rénovation 8 parcs: 15M DH
+   • Formation 100% agents: 8M DH
+   • App mobile sécurité: 12M DH
+
+💡 TOTAL RECOMMANDÉ: 185M DH
+   ROI attendu: 3.2x sur 3 ans (47% annualisé)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 CONFIGURATION TECHNIQUE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Application Web
+   • Navigateur: Chrome, Firefox, Safari, Edge (moderne)
+   • JavaScript: Activé
+   • Internet: Optionnel (cartes OSM uniquement)
+   • Installation: AUCUNE
+
+Script Python
+   • Python: 3.10+
+   • Dépendances: pandas, numpy, matplotlib, plotly
+   • Optionnel: geopandas, folium, osmnx
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📞 SUPPORT & CONTACT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Cellule Genre - Commune Urbaine d'Agadir
+📧 Email: genre@agadir.ma
+📞 Tél: +212 5XX-XX-XX-XX
+🏢 Adresse: Avenue Mohammed V, Agadir
+
+Support Technique
+📧 support@agadir-genre.ma
+⏰ Horaires: Lun-Ven 9h-17h
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📜 CRÉDITS & LICENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Développé pour: Ville d'Agadir
+Avec le soutien de: ONU Femmes Maroc
+Basé sur: Méthodologie BSG (Budgétisation Sensible au Genre)
+Technologies: HTML5, JavaScript, Python, Leaflet, Plotly, OpenStreetMap
+Licence: Usage libre collectivités territoriales marocaines
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🌟 VERSION & MISE À JOUR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version actuelle: 1.0
+Date: Octobre 2025
+Prochaine MAJ: Trimestre 2 2026
+
+Nouveautés prévues:
+   • Intégration données temps réel
+   • Module participation citoyenne
+   • Application mobile iOS/Android
+   • API pour systèmes tiers
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ COMMENCEZ MAINTENANT!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👉 Ouvrir: agadir_budget_genre_spatial.html
+👉 Lire: README.md
+👉 Explorer: Tous les modules interactifs
+
+🌟 "Une ville égalitaire est une ville prospère" 🌟
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
